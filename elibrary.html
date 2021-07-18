@@ -1,0 +1,188 @@
+<!Doctype html>
+<html>
+</html>
+    <head>
+<style>
+.titlediv {
+	height:80px;
+	background-color: #7cfc00;
+	margin-left: -8px;
+	margin-top: -10px;
+	margin-right: -8px;
+}
+.titlediv h2{
+	
+	background-color: #7cfc00;
+	margin-left: 1445px;
+	margin-top: -58px;
+	margin-right: -8px;
+}
+
+
+.menudiv {
+	height:47px;
+	background-color: #343a40;
+	margin-left: -8px;
+	margin-top: -10px;
+	margin-right: -8px;
+}
+.bookissuediv {
+	display:none;
+	margin-left: -8px;
+	margin-right: -8px;
+	height:1024px;
+}
+.booksearchdiv {
+	display:block;
+	margin-left: 20px;
+	height:1024px;
+}
+#button1 {
+	margin-left: 5px;
+	margin-top: -19px;
+}
+#button2 {
+	margin-left: 30px;
+	margin-top: -19px;
+}
+.button {
+	display: inline-block;
+	border-radius: 8px;
+	background-color: #6c757d;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 15px;
+	padding: 15px;
+	width: 180px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: -45px;
+}
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+.button span:after {
+	content: '';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+.button:hover span {
+	padding-top:5px;
+	padding-right:5px;
+}
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+.button:active {
+	background:#5a6268;
+}
+.button:focus {
+	background:#5a6268;
+	padding-top:15px;
+	padding-right:15px;
+}
+input[type=text] {
+	width: 50%;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 13px;
+	background-image:url('searchicon.png');
+	background-size:20px;
+	background-color: white;
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+}
+.psearch {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:20px;
+}
+.issuetable {
+	margin-left:80px;
+	margin-top:80px;
+	width:80%;
+}
+.issuetable th {
+	height:20px;
+	text-align:center;
+	font-style:oblique;
+	text-decoration:underline;
+	color:#000033;
+}
+.issuetable td {
+	text-align:center;
+	color:#000033;
+}
+</style>
+<script>
+        function displaySearch() {
+			 document.getElementById("bsearchdiv").style.display='block';
+			  document.getElementById("bissuediv").style.display='none';
+			
+        }
+
+        function displayIssue() {
+			 document.getElementById("bsearchdiv").style.display='none';
+			  document.getElementById("bissuediv").style.display='block';
+		
+        }
+
+    
+    </script>
+<title>Library - Student Portal</title>
+    </head>
+
+    <body id="body" >
+    <div id="maindiv">
+      <div class="titlediv">
+        <h1>E-Library</h1>
+		<h2><a href=index.html>Home</a></h2>
+      </div>
+      <div class="menudiv">
+        <button id="button1" class="button" style="vertical-align:middle;" onClick="displaySearch()"><span>Book Search </span></button>
+        <button id="button2" class="button" style="vertical-align:middle;" onClick="displayIssue()"><span>Book Issue </span></button>
+      </div>
+      <div id="bsearchdiv" class="booksearchdiv">
+        <p class="psearch">Enter Book Name
+        <p>
+          <input type="text" id="searchValue" placeholder="Search.." autofocus>
+        <div id="dispbooklist" class="booklistdiv">
+          <p><a href="apis-php-en.pdf" target="_blank">My SQL and PHP</a><br>
+          </p>
+          <p><a href="Let Us C - Yashwant Kanetkar.pdf" target="_blank">Let US C by Yashwant Kanetkar</a></p>
+        </div>
+      </div>
+      <div id="bissuediv" class="bookissuediv">
+        <table width="200"  class="issuetable">
+          <tr>
+            <th scope="col">Book Name</th>
+            <th scope="col">Issue Details</th>
+          </tr>
+          <tr>
+            <td>HTML & CSS: Design and Build Web Sites<br>
+              - Jon Duckett, John Wiley & Sons.</td>
+            <td><p>Issue Date: 26/02/2020<br>
+                Issued to: Rishav<br>
+                Issued upto: 12/03/2020 </p></td>
+          </tr>
+          <tr>
+            <td>Software Engineering<br>
+              - P. Fleeger, Prentice Hall</td>
+            <td><p>Issue Date: 26/02/2020<br>
+                Issued to: Raj<br>
+                Issued upto: 12/03/2020 </p></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</body>
+</html>
